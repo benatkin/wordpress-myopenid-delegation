@@ -51,12 +51,16 @@ function myopenid_delegation_account_username_field_callback() {
 }
 
 function myopenid_delegation_render_meta_tags() {
-	$username = get_option('myopenid_delegation_account_username');
-	echo '<link rel="openid.server" href="http://www.myopenid.com/server" />' . "\n";
-	echo '<link rel="openid.delegate" href="http://' . esc_attr($username) . '.myopenid.com/" />' . "\n";
-	echo '<link rel="openid2.local_id" href="http://' . esc_attr($username) . '.myopenid.com" />' . "\n";
-	echo '<link rel="openid2.provider" href="http://www.myopenid.com/server" />' . "\n";
-	echo '<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=' . esc_attr($username) . '.myopenid.com" />' . "\n";
+	if (is_home()) {
+		$username = get_option('myopenid_delegation_account_username');
+		if ($username) {
+			echo '<link rel="openid.server" href="http://www.myopenid.com/server" />' . "\n";
+			echo '<link rel="openid.delegate" href="http://' . esc_attr($username) . '.myopenid.com/" />' . "\n";
+			echo '<link rel="openid2.local_id" href="http://' . esc_attr($username) . '.myopenid.com" />' . "\n";
+			echo '<link rel="openid2.provider" href="http://www.myopenid.com/server" />' . "\n";
+			echo '<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=' . esc_attr($username) . '.myopenid.com" />' . "\n";
+		}
+	}
 }
 
 add_action('wp_head', 'myopenid_delegation_render_meta_tags');

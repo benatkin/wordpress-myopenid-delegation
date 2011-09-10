@@ -13,8 +13,9 @@ This plugin adds the required meta tags to delegate OpenID to a http://myopenid.
 
 == Installation ==
 
-Use the standard WP installation procedure. After installing, go to the settings to set the
-MyOpenID account.
+Use the standard WP plugin installation procedure. After installing and activating, go to
+the Settings > General to set the username of your MyOpenID account. Once that is set, link
+and meta tags to delegate OpenID to your MyOpenID account will be added to your home page.
 
 == Troubleshooting ==
 
