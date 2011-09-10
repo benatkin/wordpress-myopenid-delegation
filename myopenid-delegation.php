@@ -17,7 +17,7 @@
 
 /*
 Plugin Name: MyOpenID Delegation
-Plugin URI: http://benatkin.com/plugins/myopenid-delegation
+Plugin URI: https://github.com/benatkin/wordpress-myopenid-delegation
 Description: Delegates blog URL to MyOpenID
 Version: 0.0.1
 Author: Ben Atkin
